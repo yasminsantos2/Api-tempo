@@ -1,7 +1,15 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="api tempo real")
+from clima import buscar_clima   # importa o miolo!
+
+app = FastAPI()
+
 
 @app.get("/")
-def root():
-    return {"message": "api tempo real"}
+def raiz():
+    return {"mensagem": "Servidor de clima no ar!"}
+
+
+@app.get("/clima")
+def clima(cidade: str):
+    return buscar_clima(cidade)   # só chama a função do miolo

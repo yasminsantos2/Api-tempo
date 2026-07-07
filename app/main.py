@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from clima import buscar_clima   # importa o miolo!
+from app.services import buscar_clima
 
 app = FastAPI()
 
@@ -12,4 +12,4 @@ def raiz():
 
 @app.get("/clima")
 def clima(cidade: str):
-    return buscar_clima(cidade)   # só chama a função do miolo
+    return buscar_clima(cidade)

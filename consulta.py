@@ -1,4 +1,4 @@
-from clima import buscar_clima   # o MESMO miolo
+from app.services import buscar_clima
 
 cidade = input("Digite o nome da cidade: ")
 dados = buscar_clima(cidade)
